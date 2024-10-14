@@ -1,0 +1,34 @@
+services:
+  authservice:
+    image: ${DOCKER_REGISTRY-}authservice
+    build:
+      context: .
+      dockerfile: Services/AuthService/AuthService/Dockerfile
+    ports:
+      - "5001:80"
+
+  courseservice:
+    image: ${DOCKER_REGISTRY-}courseservice
+    build:
+      context: .
+      dockerfile: Services/CourseService/CourseService/Dockerfile
+    ports:
+      - "5002:80"
+
+  gateway:
+    image: ${DOCKER_REGISTRY-}gateway
+    build:
+      context: .
+      dockerfile: Services/Gateway/Gateway/Dockerfile
+    ports:
+      - "5003:80"
+
+  notificationservice:
+    image: ${DOCKER_REGISTRY-}notificationservice
+    build:
+      context: .
+      dockerfile: Services/NotificationService/NotificationService/Dockerfile
+    ports:
+      - "5004:80"
+
+
